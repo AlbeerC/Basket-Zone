@@ -1,0 +1,64 @@
+@import '../../scss/variables.scss';
+
+.card {
+    background-color: #dddddd;
+    max-width: 35rem;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+
+    &:hover {
+        border: 1px solid $black;
+    }
+
+    .wishlist-btn {
+        display: flex;
+        justify-content: flex-end;
+
+        svg {
+            cursor: pointer;
+            margin: 1rem 1rem 0 0;
+
+            &:hover {
+                transition: ease all 500ms;
+                transform: scale(1.2);
+            }
+        }
+    }
+
+    img {
+        height: 30rem;
+        width: auto;
+    }
+
+    .card-info {
+        margin: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: left;
+        gap: 1rem;
+
+        p {
+            font-weight: bold;
+        }
+
+        .card-info-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-right: 3.5rem;
+
+            span {
+                color: #525151;
+                text-transform: uppercase;
+            }
+
+            .price {
+                font-size: 2rem;
+                text-decoration: underline;
+                color: $mainColor;
+            }
+        }
+    }
+}

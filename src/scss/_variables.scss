@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap');
+
+//Fonts
+$titleFont: 'Oswald', sans-serif;
+$textFont: 'Nunito', sans-serif;
+$linkFont: 'Quicksand', sans-serif;
+
+//Colors
+$black: #000000;
+$white: #ffffff;
+$mainColor: #fe7f00;
+
+//Mixin
+
+$pc: 992px;
+$tablet: 768px;
+
+@mixin responsive ($medida) {
+    @if $medida == pc {
+        @media (max-width: $pc) {
+            @content;
+        }
+    } @else if $medida == tablet {
+        @media (max-width: $tablet) {
+            @content;
+        }
+    }
+}

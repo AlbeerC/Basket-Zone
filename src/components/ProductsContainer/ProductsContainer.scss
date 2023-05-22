@@ -1,0 +1,36 @@
+@import '../../scss/variables';
+
+.products {
+
+    h2 {
+        margin-top: 5rem;
+        font-size: 5rem;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .products-categories {
+        display: flex;
+        justify-content: space-between;
+        margin: 5rem 0;
+        padding: 0 6rem;
+
+        ul {
+            gap: 6rem;
+            cursor: pointer;
+
+            li {
+                font-size: 2.5rem;
+                font-family: $linkFont;
+                font-weight: 700;
+            }
+        }
+
+        p {
+            text-decoration: underline;
+            font-size: 3rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    }
+}
