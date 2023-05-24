@@ -34,6 +34,10 @@
                 font-size: 2.5rem;
                 font-family: $linkFont;
                 font-weight: 700;
+
+                a {
+                    color: $black;
+                }
             }
         }
 
@@ -42,6 +46,10 @@
             font-size: 3rem;
             font-weight: bold;
             cursor: pointer;
+
+            a {
+                color: $black;
+            }
         }
     }
 

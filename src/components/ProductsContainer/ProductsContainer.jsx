@@ -2,7 +2,7 @@ import './ProductsContainer.scss'
 import Landing from '../Landing/Landing'
 import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore'
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import ProductsList from '../ProductsList/ProductsList'
 
 function ProductsContainer () {
@@ -16,6 +16,7 @@ function ProductsContainer () {
     useEffect(() => {
         const querydb = getFirestore()
         const queryCollection = collection(querydb, 'products')
+
         if (categoryId) {
             const queryFilter = query(queryCollection, where('category', '==', categoryId))
             getDocs(queryFilter)
@@ -39,7 +40,7 @@ function ProductsContainer () {
 
     }, [categoryId])
 
-    const handleSearch = e => {
+    const handleSearch = (e) => {
         setSearch(e.target.value);
         filter(e.target.value);
     }
@@ -67,11 +68,11 @@ function ProductsContainer () {
                 <h2>Our products</h2>
                 <div className="products-categories">
                     <ul>
-                        <li>NBA</li>
-                        <li>Hardwood Classic</li>
-                        <li>Custom</li>
+                        <li><Link to='/category/nba'>NBA</Link></li>
+                        <li><Link to='/category/classic'>Classic</Link></li>
+                        <li><Link to='/category/custom'>Custom</Link></li>
                     </ul>
-                    <p>See all</p>
+                    <p><Link to='/'>See all</Link></p>
                 </div>
                 <input className="search" type="search" value={search} onChange={handleSearch} placeholder="Search by club, player, color"/>
                 {data.length === 0 ? <h2 className='notfound'>NOT FOUND</h2> : <ProductsList data={data} />}

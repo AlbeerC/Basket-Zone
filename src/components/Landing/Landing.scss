@@ -15,6 +15,10 @@
             color: $white;
             margin-top: 8rem;
 
+            @include responsive(tablet) {
+                margin-left: 3rem;
+            }
+
             h1 {
                 font-size: 7rem;
                 letter-spacing: 1rem;
