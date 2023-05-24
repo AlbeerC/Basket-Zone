@@ -9,8 +9,8 @@ function ProductsContainer () {
 
     const [data, setData] = useState([])
     const [originalData, setOriginalData] = useState([])    
-    const [loading, setLoading] = useState(true)
     const [search, setSearch] = useState("")
+    const [loading, setLoading] = useState(true)
     const { categoryId } = useParams()
 
     useEffect(() => {
@@ -40,9 +40,8 @@ function ProductsContainer () {
     }, [categoryId])
 
     const handleSearch = e => {
-        const searchTerm = e.target.value;
-        setSearch(searchTerm);
-        filter(searchTerm);
+        setSearch(e.target.value);
+        filter(e.target.value);
     }
 
     const filter = (searchTerm) => {

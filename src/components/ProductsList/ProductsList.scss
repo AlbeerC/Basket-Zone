@@ -1,7 +1,15 @@
+@import '../../scss/variables';
+
 .products-list {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 5rem;
     margin: 5rem;
     min-height: 50vh;
+
+    @include responsive(pc) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
