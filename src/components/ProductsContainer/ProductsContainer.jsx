@@ -8,6 +8,9 @@ import ProductsList from '../ProductsList/ProductsList'
 function ProductsContainer () {
 
     const [data, setData] = useState([])
+    const [originalData, setOriginalData] = useState([])    
+    const [loading, setLoading] = useState(true)
+    const [search, setSearch] = useState("")
     const { categoryId } = useParams()
 
     useEffect(() => {
@@ -16,14 +19,47 @@ function ProductsContainer () {
         if (categoryId) {
             const queryFilter = query(queryCollection, where('category', '==', categoryId))
             getDocs(queryFilter)
-                .then(res => setData(res.docs.map(product => ({id: product.id, ...product.data()}))))
+            .then(res => {
+                const productsData = res.docs.map(product => ({id: product.id, ...product.data()}));
+                setData(productsData);
+                setOriginalData(productsData);
+            })
+            .catch(error => console.log(error))
+            .finally(() => setLoading(false))
         } else {
             getDocs(queryCollection)
-                .then(res => setData(res.docs.map(product => ({id: product.id, ...product.data()}))))
+            .then(res => {
+                const productsData = res.docs.map(product => ({id: product.id, ...product.data()}));
+                setData(productsData);
+                setOriginalData(productsData);
+            })
+            .catch(error => console.log(error))
+            .finally(() => setLoading(false))
         }
 
     }, [categoryId])
 
+    const handleSearch = e => {
+        const searchTerm = e.target.value;
+        setSearch(searchTerm);
+        filter(searchTerm);
+    }
+
+    const filter = (searchTerm) => {
+        if (searchTerm.trim() === "") {
+            setData(originalData);
+            return (<h1>NOT FOUND</h1>);
+        } else {
+            const searchResults = originalData.filter((element) => {
+                const elementName = element.name.toString().toLowerCase();
+                return elementName.includes(searchTerm.toLowerCase());
+            });
+            setData(searchResults);
+        }
+    }
+
+
+    if (loading) { return (<h1 className='loading'>LOADING...</h1>) }
 
     return (
         <>
@@ -32,13 +68,14 @@ function ProductsContainer () {
                 <h2>Our products</h2>
                 <div className="products-categories">
                     <ul>
-                        <li to='/category/nba'>NBA</li>
-                        <li to='/category/national'>National teams</li>
-                        <li to='/category/old'>Old school</li>
+                        <li>NBA</li>
+                        <li>Hardwood Classic</li>
+                        <li>Custom</li>
                     </ul>
                     <p>See all</p>
                 </div>
-                <ProductsList data={data} />
+                <input className="search" type="search" value={search} onChange={handleSearch} placeholder="Search by club, player, color"/>
+                {data.length === 0 ? <h2 className='notfound'>NOT FOUND</h2> : <ProductsList data={data} />}
             </div>
         </>
     )

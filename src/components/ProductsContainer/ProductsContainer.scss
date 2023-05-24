@@ -1,6 +1,7 @@
 @import '../../scss/variables';
 
 .products {
+    text-align: center;
 
     h2 {
         margin-top: 5rem;
@@ -32,5 +33,18 @@
             font-weight: bold;
             cursor: pointer;
         }
+    }
+
+    input {
+        background-color: #dddddd;
+        border: none;
+        color: $black;
+        font-weight: bold;
+        font-family: $textFont;
+        width: 50rem;
+        padding: 1rem 0;
+        text-align: center;
+        border-radius: .5rem;
+        font-size: 2rem;
     }
 }

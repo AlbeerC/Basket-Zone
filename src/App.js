@@ -5,6 +5,7 @@ import Navbar from './components/Navbar/Navbar';
 import NavbarTop from './components/NavbarTop/NavbarTop';
 import ProductsContainer from './components/ProductsContainer/ProductsContainer';
 import ProductsCard from './components/ProductsCard/ProductsCard';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path='/' element={<ProductsContainer />} />
         <Route path='/card' element={<ProductsCard />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
