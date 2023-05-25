@@ -45,6 +45,7 @@
 
             @include responsive(tablet) {
                 margin-top: 2rem;
+                text-align: center;
             }
         }
 
@@ -81,10 +82,11 @@
                     font-family: $titleFont;
                 }
 
-                p {
+                button {
                     text-decoration: underline;
                     cursor: pointer;
                     font-size: 1.7rem;
+                    border: none;
                 }
             }
 

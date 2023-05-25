@@ -1,10 +1,23 @@
+import { useState } from 'react'
 import './Detail.scss'
 import { FaShoppingCart } from 'react-icons/fa'
+import DetailModal from '../DetailModal/DetailModal'
 
 function Detail ( {data} ) {
 
+    const [modalOpen, setModalOpen] = useState(false)
+
+    const handleOpenModal = () => {
+        setModalOpen(true)
+    }
+
+    const handleCloseModal = () => {
+        setModalOpen(false)
+    }
+
     return (
         <div className="detail">
+            {modalOpen && <DetailModal onClose={handleCloseModal} />}
             <div className="detail-left">
                 <img src={data.img} alt={data.name} />
             </div>
@@ -15,7 +28,7 @@ function Detail ( {data} ) {
                 <div className="size">
                     <div className="size-top">
                         <h3>Size</h3>
-                        <p>Size guide</p>
+                        <button onClick={handleOpenModal}>Size guide</button>
                     </div>
                     <div className="size-btns">
                         <button>S</button>
