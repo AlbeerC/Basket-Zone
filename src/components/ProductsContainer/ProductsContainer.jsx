@@ -14,31 +14,23 @@ function ProductsContainer () {
     const { categoryId } = useParams()
 
     useEffect(() => {
-        const querydb = getFirestore()
-        const queryCollection = collection(querydb, 'products')
-
+        const querydb = getFirestore();
+        const queryCollection = collection(querydb, 'products');
+        let queryFilter = queryCollection;
+      
         if (categoryId) {
-            const queryFilter = query(queryCollection, where('category', '==', categoryId))
-            getDocs(queryFilter)
-            .then(res => {
-                const productsData = res.docs.map(product => ({id: product.id, ...product.data()}));
-                setData(productsData);
-                setOriginalData(productsData);
-            })
-            .catch(error => console.log(error))
-            .finally(() => setLoading(false))
-        } else {
-            getDocs(queryCollection)
-            .then(res => {
-                const productsData = res.docs.map(product => ({id: product.id, ...product.data()}));
-                setData(productsData);
-                setOriginalData(productsData);
-            })
-            .catch(error => console.log(error))
-            .finally(() => setLoading(false))
+          queryFilter = query(queryCollection, where('category', '==', categoryId));
         }
-
-    }, [categoryId])
+      
+        getDocs(queryFilter)
+          .then((res) => {
+            const productsData = res.docs.map((product) => ({ id: product.id, ...product.data(), }));
+            setData(productsData);
+            setOriginalData(productsData);
+          })
+          .catch((error) => console.log(error))
+          .finally(() => setLoading(false));
+      }, [categoryId]);
 
     const handleSearch = (e) => {
         setSearch(e.target.value);
@@ -48,7 +40,6 @@ function ProductsContainer () {
     const filter = (searchTerm) => {
         if (searchTerm.trim() === "") {
             setData(originalData);
-            return (<h1>NOT FOUND</h1>);
         } else {
             const searchResults = originalData.filter((element) => {
                 const elementName = element.name.toString().toLowerCase();

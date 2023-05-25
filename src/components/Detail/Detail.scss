@@ -1,0 +1,135 @@
+@import '../../scss/variables';
+
+.detail {
+    display: flex;
+    justify-content: space-between;
+    margin: 5rem;
+
+    @include responsive(pc) {
+        flex-direction: column;
+        align-items: center;
+        margin: 5rem 1rem;
+    }
+
+    .detail-left {
+        width: 40%;
+
+        @include responsive(tablet) {
+            width: 100%;
+        }
+
+        img {
+            height: 40rem;
+            width: auto;
+
+            @include responsive(tablet) {
+                height: auto;
+                width: 100%;
+            }
+        }
+    }
+    
+    .detail-right {
+        width: 60%;
+
+        @include responsive(tablet) {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h2 {
+            font-family: $titleFont;
+
+            @include responsive(tablet) {
+                margin-top: 2rem;
+            }
+        }
+
+        .stock {
+            padding: 1rem 0 2rem 0;
+            color: #504f4f;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-family: $titleFont;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        .size {
+            margin-top: 3rem;
+            background-color: #EFEFEF;
+            width: 40rem;
+
+            @include responsive(tablet) {
+                width: 30rem;
+            }
+
+            .size-top {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin: 2rem 3rem;
+
+                h3 {
+                    font-size: 2rem;
+                    font-weight: bold;
+                    font-family: $titleFont;
+                }
+
+                p {
+                    text-decoration: underline;
+                    cursor: pointer;
+                    font-size: 1.7rem;
+                }
+            }
+
+            .size-btns {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+                padding-bottom: 3rem;
+
+                button {
+                    font-size: 2rem;
+                    font-weight: bold;
+                    padding: .5rem;
+                    cursor: pointer;
+
+                    &:hover {
+                        border: 1px solid $mainColor;
+                    }
+                }
+            }
+        }
+
+        .add-to-cart {
+            margin-top: 5rem;
+            padding: 1rem 3rem;
+            background-color: #504f4f;
+            color: $white;
+            font-size: 2rem;
+            font-weight: bold;
+            font-family: $textFont;
+            text-align: center;
+            cursor: pointer;
+            text-transform: uppercase;
+            width: 30rem;
+            border: 2px solid $mainColor;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+
+            &:hover {
+                color: $mainColor;
+                border: 2px solid $black;
+            }
+        }
+    }
+}

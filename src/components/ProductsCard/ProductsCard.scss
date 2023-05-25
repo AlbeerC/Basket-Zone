@@ -2,7 +2,9 @@
 
 .card {
     background-color: #dddddd;
+    color: $black;
     max-width: 35rem;
+    height: 100%;
     display: flex;
     flex-direction: column;
     cursor: pointer;
@@ -53,6 +55,7 @@
             span {
                 color: #525151;
                 text-transform: uppercase;
+                font-family: $textFont;
             }
 
             .price {

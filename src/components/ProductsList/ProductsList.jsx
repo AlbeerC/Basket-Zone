@@ -9,6 +9,7 @@ function ProductsList({ data }) {
             {data.map((prod) => (
                 <ProductsCard
                 key={prod.id}
+                id={prod.id}
                 img={prod.img}
                 name={prod.name}
                 category={prod.category}

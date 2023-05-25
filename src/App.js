@@ -6,6 +6,7 @@ import NavbarTop from './components/NavbarTop/NavbarTop';
 import ProductsContainer from './components/ProductsContainer/ProductsContainer';
 import ProductsCard from './components/ProductsCard/ProductsCard';
 import Footer from './components/Footer/Footer';
+import DetailContainer from './components/DetailContainer/DetailContainer'
 
 function App() {
   return (
@@ -14,8 +15,8 @@ function App() {
       <Navbar />
       <Routes>
         <Route path='/' element={<ProductsContainer />} />
-        <Route path="/category/:categoryId" element={<ProductsContainer />} />
-        <Route path='/card' element={<ProductsCard />} />
+        <Route path='/category/:categoryId' element={<ProductsContainer />} />
+        <Route path='/detail/:detailId' element={<DetailContainer />} />
       </Routes>
       <Footer />
     </BrowserRouter>

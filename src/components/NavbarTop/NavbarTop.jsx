@@ -5,7 +5,7 @@ function NavbarTop () {
 
     const phrases = [
         "Discounts for you. Up to 20% on selected products",
-        "Free shipping on purchases over US$70",
+        "Free shipping on purchases over US$100",
         "3 interest-free installments"
     ]
 
