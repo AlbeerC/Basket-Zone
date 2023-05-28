@@ -4,7 +4,6 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Navbar from './components/Navbar/Navbar';
 import NavbarTop from './components/NavbarTop/NavbarTop';
 import ProductsContainer from './components/ProductsContainer/ProductsContainer';
-import ProductsCard from './components/ProductsCard/ProductsCard';
 import Footer from './components/Footer/Footer';
 import DetailContainer from './components/DetailContainer/DetailContainer'
 

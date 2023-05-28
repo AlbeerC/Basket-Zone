@@ -11,42 +11,49 @@ function ProductsContainer () {
     const [originalData, setOriginalData] = useState([])    
     const [search, setSearch] = useState("")
     const [loading, setLoading] = useState(true)
+    const [showMore, setShowMore] = useState(false)
+    const [visibleProducts, setVisibleProducts] = useState(18)
     const { categoryId } = useParams()
 
     useEffect(() => {
-        const querydb = getFirestore();
-        const queryCollection = collection(querydb, 'products');
-        let queryFilter = queryCollection;
+        const querydb = getFirestore()
+        const queryCollection = collection(querydb, 'products')
+        let queryFilter = queryCollection
       
         if (categoryId) {
-          queryFilter = query(queryCollection, where('category', '==', categoryId));
+          queryFilter = query(queryCollection, where('category', '==', categoryId))
         }
       
         getDocs(queryFilter)
           .then((res) => {
-            const productsData = res.docs.map((product) => ({ id: product.id, ...product.data(), }));
-            setData(productsData);
-            setOriginalData(productsData);
+            const productsData = res.docs.map((product) => ({ id: product.id, ...product.data(), }))
+            setData(productsData)
+            setOriginalData(productsData)
+            setShowMore(productsData)
           })
           .catch((error) => console.log(error))
-          .finally(() => setLoading(false));
-      }, [categoryId]);
+          .finally(() => setLoading(false))
+      }, [categoryId])
 
     const handleSearch = (e) => {
-        setSearch(e.target.value);
-        filter(e.target.value);
+        setSearch(e.target.value)
+        filter(e.target.value)
     }
 
     const filter = (searchTerm) => {
         if (searchTerm.trim() === "") {
-            setData(originalData);
+            setData(originalData)
         } else {
             const searchResults = originalData.filter((element) => {
-                const elementName = element.name.toString().toLowerCase();
-                return elementName.includes(searchTerm.toLowerCase());
+                const elementName = element.name.toString().toLowerCase()
+                return elementName.includes(searchTerm.toLowerCase())
             });
-            setData(searchResults);
+            setData(searchResults)
         }
+    }
+
+    const handleLoadMore = () => {
+        setVisibleProducts(visibleProducts + 18)
     }
 
 
@@ -66,7 +73,12 @@ function ProductsContainer () {
                     <p><Link to='/'>See all</Link></p>
                 </div>
                 <input className="search" type="search" value={search} onChange={handleSearch} placeholder="Search by club, player, color"/>
-                {data.length === 0 ? <h2 className='notfound'>NOT FOUND</h2> : <ProductsList data={data} />}
+                {data.length === 0 ? ( <h2 className="notfound">NOT FOUND</h2> ) : (
+                    <>
+                        <ProductsList data={data.slice(0, visibleProducts)} />
+                        {showMore && <button className="load-more" onClick={handleLoadMore}>Load More</button>}
+                    </>
+                )}
             </div>
         </>
     )

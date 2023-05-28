@@ -1,5 +1,4 @@
 import './Landing.scss'
-import Navbar from '../Navbar/Navbar'
 
 function Landing () {
 

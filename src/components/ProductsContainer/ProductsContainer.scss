@@ -60,7 +60,7 @@
         font-weight: bold;
         font-family: $textFont;
         width: 50rem;
-        padding: 1rem 0;
+        padding: 1rem;
         text-align: center;
         border-radius: .5rem;
         font-size: 2rem;
@@ -69,4 +69,18 @@
             width: 90%;
         }
     }
+}
+
+.load-more {
+    margin: 5rem 0;
+    background-color: $black;
+    color: $mainColor;
+    border: 2px solid $mainColor;
+    padding: 1rem 3rem;
+    border-radius: .5rem;
+    font-weight: bold;
+    font-family: $textFont;
+    font-size: 2rem;
+    text-transform: uppercase;
+    cursor: pointer;
 }

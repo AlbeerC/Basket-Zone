@@ -23,7 +23,7 @@ function Detail ( {data} ) {
             </div>
             <div className="detail-right">
                 <h2>{data.name}</h2>
-                <p className="stock">En stock disponible</p>
+                <p className="stock">In stock available</p>
                 <p className='price'>US${data.price}</p>
                 <div className="size">
                     <div className="size-top">
