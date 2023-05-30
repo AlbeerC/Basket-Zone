@@ -1,0 +1,46 @@
+@import '../../scss/variables';
+
+.counter {
+    @include flex;
+    margin-top: 5rem;
+    justify-content: flex-start;
+
+    @include responsive(tablet) {
+        flex-direction: column
+    }
+
+    .counter-btns {
+        @include flex;
+        border: 2px solid $mainColor;
+        background-color: #504f4f;
+        padding: 0 2rem;
+        color: $white;
+
+        button {
+            border: none;
+            font-size: 4rem;
+            background-color: transparent;
+            color: $white;
+            cursor: pointer;
+
+            &:hover {
+                color: $mainColor;
+            }
+        }
+
+        p {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+    }
+
+    .btn-add {
+        width: 25rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        @include grayButton
+
+    }
+}

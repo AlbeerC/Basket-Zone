@@ -4,6 +4,7 @@ import { getFirestore, collection, getDocs, query, where } from 'firebase/firest
 import { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import ProductsList from '../ProductsList/ProductsList'
+import Spinner from '../Spinner/Spinner'
 
 function ProductsContainer () {
 
@@ -56,13 +57,12 @@ function ProductsContainer () {
         setVisibleProducts(visibleProducts + 18)
     }
 
-
-    if (loading) { return (<h1 className='loading'>LOADING...</h1>) }
+    if (loading) { return (<Spinner />) }
 
     return (
         <>
             <Landing />
-            <div className="products">
+            <div className="products" id='products'>
                 <h2>Our products</h2>
                 <div className="products-categories">
                     <ul>

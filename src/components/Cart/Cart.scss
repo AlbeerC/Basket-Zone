@@ -1,0 +1,55 @@
+@import '../../scss/variables';
+
+.cart {
+    min-height: 55vh;
+
+    h2 {
+        margin: 5rem 0;
+        font-family: $titleFont;
+        font-weight: bold;
+        font-size: 3rem;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+
+}
+.empty-cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    a {
+        @include grayButton
+    }
+
+}
+
+.full-cart {
+
+    h2 {
+        margin: 2rem 0;
+    }
+
+    .bottom {
+        @include flex;
+        gap: 7rem;
+        margin: 5rem 0;
+
+        @include responsive(tablet) {
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        p {
+            font-size: 3rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-family: $titleFont;
+        }
+
+        button {
+            @include grayButton
+        }
+    }
+}

@@ -1,0 +1,15 @@
+@import '../../scss/variables';
+
+.cart-widget {
+    color: $black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+
+    span {
+        font-weight: bold;
+        font-family: $titleFont;
+        font-size: 2rem;
+    }
+}

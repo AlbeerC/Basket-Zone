@@ -2,6 +2,7 @@ import { getFirestore, doc, getDoc } from 'firebase/firestore'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Detail from '../Detail/Detail'
+import Spinner from '../Spinner/Spinner'
 
 function DetailContainer () {
 
@@ -18,10 +19,10 @@ function DetailContainer () {
             .finally(() => setLoading(false))
     }, [])
 
-    if (loading) { return (<h1 className='loading'>LOADING...</h1>) }
+    if (loading) { return (<Spinner />) }
 
     return (
-            <Detail data={data}/>
+        <Detail {...data} />
     )
 }
 

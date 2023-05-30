@@ -28,3 +28,28 @@ $tablet: 768px;
         }
     }
 }
+
+@mixin flex () {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+@mixin grayButton () {
+    padding: 1rem 3rem;
+    background-color: #504f4f;
+    color: $white;
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: $textFont;
+    text-align: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    border: 2px solid $mainColor;
+
+    &:hover {
+        color: $mainColor;
+        border: 2px solid $black;
+    }
+}

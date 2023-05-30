@@ -1,0 +1,44 @@
+@import '../../scss/variables';
+
+.cart-list {
+    margin: 5rem 0;
+
+    .cart-product {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5rem;
+        -webkit-box-shadow: 5px 5px 15px 5px #000000; 
+        box-shadow: 5px 5px 15px 5px #000000;
+        width: 80vw;
+        margin: 0 auto;
+        padding: 0 3rem;
+
+        @include responsive(pc) {
+            flex-direction: column;
+            padding: 3rem;
+            align-items: flex-start;
+            gap: 2rem;
+        }
+    
+        img {
+            height: 15rem;
+            width: auto;
+        }
+
+        button {
+            background-color: #dd1d1d;
+            padding: .5rem 2rem;
+            color: $white;
+            font-family: $textFont;
+            font-weight: bold;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        p {
+            font-weight: bold;
+        }
+    }
+}
+

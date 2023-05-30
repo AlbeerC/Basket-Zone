@@ -2,6 +2,7 @@ import './Navbar.scss'
 import logo from '../../assets/logo.png'
 import { FaUserAlt, FaHeart, FaShoppingCart } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
+import CartWidget from '../CartWidget/CartWidget'
 
 function Navbar () {
 
@@ -10,15 +11,15 @@ function Navbar () {
             <div className="navbar-bottom">
                 <Link to='/'> <img src={logo} alt="brand logo" /> </Link>
                 <ul>
-                    <li>Home</li>
-                    <li>About us</li>
-                    <li>Contact</li>
+                    <Link to='/'>Home</Link>
+                    <Link>About us</Link>
+                    <Link>Contact</Link>
                 </ul>
-                <ul>
-                    <li><FaUserAlt size={32} /></li>
-                    <li><FaHeart size={32} /></li>
-                    <li><FaShoppingCart size={32} /></li>
-                </ul>
+                <div className='icons'>
+                    <FaUserAlt size={32} />
+                    <FaHeart size={32} />
+                    <CartWidget />
+                </div>
             </div>
 
         </nav>
