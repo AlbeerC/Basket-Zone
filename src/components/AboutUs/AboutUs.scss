@@ -1,0 +1,24 @@
+@import '../../scss/variables';
+
+.about-us {
+    margin: 0 10rem;
+
+    @include responsive(pc) {
+        margin: 0 2rem;
+    }
+    
+    h2 {
+        font-size: 3rem;
+        font-family: $titleFont;
+        margin-top: 2rem;
+    }
+
+    .texts {
+
+        p {
+            padding: 1rem 0;
+            font-size: 1.7rem;
+            text-align: justify;
+        }
+    }
+}

@@ -1,0 +1,34 @@
+@import '../../scss/variables';
+
+.help {
+    margin: 0 10rem;
+
+    @include responsive(pc) {
+        margin: 0 2rem;
+    }
+
+    h2 {
+        font-size: 3rem;
+        font-family: $titleFont;
+        margin: 2rem 0;
+    }
+
+    .help-article {
+        margin: 2rem 0;
+
+        h3 {
+            font-size: 2rem;
+            font-family: $titleFont;
+            font-weight: bold;
+        }
+
+        .texts {
+            
+            p {
+                padding: 1rem 0;
+                font-size: 1.7rem;
+                text-align: justify;
+            }
+        }
+    }
+}

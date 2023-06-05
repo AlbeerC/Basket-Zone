@@ -12,8 +12,8 @@ function Navbar () {
                 <Link to='/'> <img src={logo} alt="brand logo" /> </Link>
                 <ul>
                     <Link to='/'>Home</Link>
-                    <Link>About us</Link>
-                    <Link>Contact</Link>
+                    <Link to='/aboutus'>About us</Link>
+                    <Link to='/help'>Help</Link>
                 </ul>
                 <div className='icons'>
                     <FaUserAlt size={32} />
