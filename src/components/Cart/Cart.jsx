@@ -6,7 +6,7 @@ import CartProduct from "../CartProduct/CartProduct";
 
 function Cart () {
 
-    const {cart, totalQuantity, total, clearCart} = useContext(CartContext)
+    const {cart, total, clearCart} = useContext(CartContext)
 
 
     if (cart.length === 0) {

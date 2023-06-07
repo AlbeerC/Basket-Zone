@@ -1,0 +1,47 @@
+@import '../../scss/variables';
+
+.favorite-card { 
+    @include flex;
+    gap: 5rem;
+    -webkit-box-shadow: 5px 5px 15px 5px #000000; 
+    box-shadow: 5px 5px 15px 5px #000000;
+    width: 70vw;
+
+    @include responsive(pc) {
+        padding: 3rem;
+        flex-wrap: wrap;
+        gap: 4rem;
+    }
+
+    img {
+        height: 15rem;
+        width: 20rem;
+    }
+
+    p {
+        font-size: 1.7rem;
+        font-weight: bold;
+    }
+
+    .name {
+        max-width: 35%;
+
+        @include responsive(pc) {
+            max-width: 100%;
+        }
+    }
+
+    .price {
+        font-size: 2rem;
+    }
+
+    .category {
+        text-transform: uppercase;
+    }
+
+    button {
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+    }
+}

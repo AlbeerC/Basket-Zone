@@ -17,6 +17,8 @@
     .wishlist-btn {
         display: flex;
         justify-content: flex-end;
+        background-color: transparent;
+        border: none;
 
         svg {
             cursor: pointer;
@@ -31,7 +33,9 @@
 
     img {
         height: 25rem;
-        width: auto;
+        width: 30rem;
+        display: block;
+        margin: 0 auto;
     }
 
     .card-info {
@@ -44,6 +48,7 @@
 
         p {
             font-weight: bold;
+            color: $black;
         }
 
         .card-info-bottom {
@@ -64,5 +69,15 @@
                 color: $mainColor;
             }
         }
+    }
+
+    .message {
+        float: right;
+        background-color: #000000;
+        color: $white;
+        padding: 1rem;
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.7rem;
     }
 }

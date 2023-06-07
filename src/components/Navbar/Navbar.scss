@@ -63,6 +63,14 @@
             gap: 3rem;
             align-items: center;
             color: $black;
+
+            @include responsive(tablet) {
+                padding-bottom: 1rem;
+            }
+
+            a {
+                color: $black;
+            }
         }
     }
 }

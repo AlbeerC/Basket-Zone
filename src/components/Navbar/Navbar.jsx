@@ -17,7 +17,7 @@ function Navbar () {
                 </ul>
                 <div className='icons'>
                     <FaUserAlt size={32} />
-                    <FaHeart size={32} />
+                    <Link to='/favorites'> <FaHeart size={32} /> </Link>
                     <CartWidget />
                 </div>
             </div>
