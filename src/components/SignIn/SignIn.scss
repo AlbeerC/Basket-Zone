@@ -1,0 +1,31 @@
+@import '../../scss/variables';
+
+.top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+
+    a {
+        background-color: #f3f0f0;
+        color: $black;
+        border: 2px solid $mainColor;
+        text-align: center;
+        font-family: $textFont;
+        font-size: 1.7rem;
+        font-weight: bold;
+        text-transform: $linkFont;
+        border-radius: 4px;
+        padding: .5rem 1rem;
+        cursor: pointer;
+    }
+}
+
+.error-message {
+    background-color: red;
+    padding: .5rem 1rem;
+    text-align: center;
+    font-weight: bold;
+    color: $white;
+    margin-top: 1rem;
+}

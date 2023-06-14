@@ -1,0 +1,66 @@
+@import '../../scss/variables';
+
+.dashboard {
+    min-height: 55vh;
+
+    h2 {
+        margin: 3rem 0 0 3rem;
+        font-family: $titleFont;
+
+        @include responsive(pc) {
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        a {
+            font-family: $titleFont;
+            color: $black;
+            text-decoration: underline;
+
+            &:hover {
+                color: $mainColor;
+            }
+        }
+    }
+
+    .info {
+        margin: auto;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+        max-width: 50rem;
+        margin-top: 3rem;
+        display: flex;
+        flex-direction: column;
+        row-gap: 3rem;
+        padding: 2rem;
+
+        @include responsive(tablet) {
+            max-width: auto;
+            margin: 2rem;
+        }
+
+        a {
+            color: $black;
+
+            &:hover {
+                color: $mainColor;
+            }
+
+            p {
+                display: flex;
+                align-items: center;
+                gap: 2rem;
+                font-size: 2rem;
+                font-weight: bold;
+                padding-bottom: 1rem;
+                border-bottom: 2px solid $black;
+            }
+        }
+
+        button {
+            @include grayButton;
+            max-width: 15rem;
+            padding: 1rem 2rem;
+            font-size: 1.7rem;
+        }
+    }
+}
