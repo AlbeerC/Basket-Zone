@@ -49,7 +49,11 @@
         }
 
         button {
-            @include grayButton
+            @include grayButton;
+            
+            a {
+                color: $white;
+            }
         }
     }
 }

@@ -13,6 +13,7 @@ import Favorites from './components/Favorites/Favorites';
 import LogIn from './components/LogIn/LogIn';
 import SignIn from './components/SignIn/SignIn';
 import Dashboard from './components/Dashboard/Dashboard';
+import Checkout from './components/Checkout/Checkout';
 // Context
 import CartProvider from './context/CartContext';
 import FavoritesProvider from './context/FavoritesContext';
@@ -37,6 +38,7 @@ function App() {
                 <Route path='/login' element={<LogIn />} />
                 <Route path='/register' element={<SignIn />} />
                 <Route path='/myaccount' element={<Dashboard />}/>
+                <Route path='/checkout' element={<Checkout />}/>
               </Routes>
               <Footer />
             </CartProvider>
