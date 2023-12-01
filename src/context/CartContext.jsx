@@ -59,8 +59,6 @@ function CartProvider ({children}) {
         return acc
     }
 
-    console.log(cart)
-
     return (
         <CartContext.Provider value={{cart, clearCart, isInCart, removeProduct, addProduct, total, totalQuantity}}>
             {children}

@@ -10,8 +10,6 @@ function Landing () {
                     <h2>Set the trend on and off the court</h2>
                     <a href='#products'><button>Buy now</button></a>
                 </div>
-                <div className="hero-right">
-                </div>  
             </div>
 
         </section>

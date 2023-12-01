@@ -1,6 +1,8 @@
 @import '../../scss/variables';
-
 .form {
+    min-height: 65vh;
+}
+form {
     width: 40rem;
     padding: 3rem 2rem;
     background-color: $white;

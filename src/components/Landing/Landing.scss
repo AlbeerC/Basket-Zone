@@ -9,15 +9,15 @@
     .hero {
         display: flex;
         align-items: center;
-        justify-content: space-around;
+        padding-left: 15rem;
+        height: 100%;
+
+        @include responsive(tablet) {
+            padding-left: 3rem;
+        }
 
         .hero-left {
             color: $white;
-            margin-top: 8rem;
-
-            @include responsive(tablet) {
-                margin-left: 3rem;
-            }
 
             h1 {
                 font-size: 7rem;
