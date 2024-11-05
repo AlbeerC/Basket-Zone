@@ -54,10 +54,9 @@ function ProductsContainer () {
     }
 
     const handleLoadMore = () => {
-        setVisibleProducts(visibleProducts + 18)
+        setVisibleProducts(visibleProducts * 2)
     }
 
-    if (loading) { return (<Spinner />) }
 
     return (
         <>
@@ -73,6 +72,7 @@ function ProductsContainer () {
                     <p><Link to='/'>See all</Link></p>
                 </div>
                 <input className="search" type="search" value={search} onChange={handleSearch} placeholder="Search by club, player, color"/>
+                {loading && <Spinner />}
                 {data.length === 0 ? ( <h2 className="notfound">NOT FOUND</h2> ) : (
                     <>
                         <ProductsList data={data.slice(0, visibleProducts)} />
