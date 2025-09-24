@@ -14,7 +14,7 @@ function Footer () {
                 <p>Claims</p>
             </div>
             <p>© 2023 BasketZone</p>
-            <p>Fictional E-commerce developed by <a target='blank' href="https://www.linkedin.com/in/alberto-caminos-5b3961243/">Alberto Caminos</a> using React and Firebase</p>
+            <p className='github'>Fictional E-commerce developed by <a target='blank' href="https://github.com/AlbeerC">Alberto Caminos</a> using React and Firebase</p>
         </footer>
     )
 }
